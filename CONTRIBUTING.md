@@ -10,4 +10,4 @@ Use this repository for TypeScript SDK issues and pull requests. See the README 
 
 The public REAL API can evolve. Prefer additive model changes and tolerate newly added response fields. Never commit credentials or account secrets.
 
-If an API change also affects the [Python SDK](https://github.com/Hug0x0/real-community-python), link the related issue or describe the corresponding change there.
+If an API change also affects the [Python SDK](https://github.com/Hug0x0/real-python-sdk), link the related issue or describe the corresponding change there.

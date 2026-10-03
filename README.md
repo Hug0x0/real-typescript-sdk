@@ -1,4 +1,4 @@
-# REAL Community TypeScript SDK
+# REAL TypeScript SDK
 
 Community-maintained TypeScript client for the public REAL indexer API.
 
@@ -26,7 +26,7 @@ See [the example](examples/market-tickers.ts), [supported operations](docs/API.m
 
 ## Related projects
 
-- [Python SDK](https://github.com/Hug0x0/real-community-python)
+- [Python SDK](https://github.com/Hug0x0/real-python-sdk)
 - [Original shared repository](https://github.com/Hug0x0/real-community-sdks)
 
 This repository retains the TypeScript package history extracted from the original shared repository. Commit IDs changed during extraction.
