@@ -69,7 +69,7 @@ type PriceLevel = {
 
 The complete fields for `Market`, `MarketTicker`, `Trade`, `FundingPayment`, and `Liquidation` are defined in [src/types.ts](../src/types.ts). Price, quantity, payment, and rate fields use strings; time fields ending in `_ms` use numeric milliseconds.
 
-Types are compile-time declarations, not runtime validators. The request layer unwraps an object-valued `data` envelope and preserves a response whose `data` field is an array. It does not normalize arbitrary response shapes.
+Types are compile-time declarations, not runtime validators. The request layer unwraps an object-valued `data` envelope and preserves a response whose `data` field is an array. For list responses, it exposes the API's `pagination.next_cursor` as `Page.next_cursor`, preserving the original response fields. Responses that already use a top-level `next_cursor` remain supported. It does not normalize other response shapes.
 
 ## Pagination helpers
 

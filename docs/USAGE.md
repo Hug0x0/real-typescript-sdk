@@ -31,7 +31,7 @@ for await (const ticker of paginate((cursor) =>
 }
 ```
 
-Use `collect(paginate(...))` if you need an array and the full result fits in memory. A `break` stops requesting further pages. The helper relies on the server's `next_cursor` field.
+Use `collect(paginate(...))` if you need an array and the full result fits in memory. A `break` stops requesting further pages. The client exposes the server's `pagination.next_cursor` as `Page.next_cursor`, which the helper uses to request subsequent pages.
 
 ## Filter funding payments
 
@@ -73,7 +73,7 @@ import { RealIndexerClient } from "./dist/index.js";
 const client = new RealIndexerClient({
   fetch: async () => new Response(JSON.stringify({
     data: [{ market_id: "demo", symbol: "DEMO-PERP", mark_price: "1.25" }],
-    next_cursor: null,
+    pagination: { next_cursor: null },
   })),
 });
 const page = await client.marketTickers();
