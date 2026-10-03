@@ -6,7 +6,7 @@ Read-only access to market tickers, market depth, trades, liquidations, funding 
 
 ## Development
 
-Requires Node.js 20 or newer (Node.js 22.6 or newer to run the example). Run from the repository root:
+The client supports Node.js 20 or newer. Development requires Node.js 22.12 or newer on the Node.js 22 release line (used by CI), or another version supported by Vitest. Run from the repository root:
 
 ```sh
 npm ci
