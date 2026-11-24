@@ -2,7 +2,18 @@ export type Network = "mainnet" | "testnet";
 export type Pagination = { cursor?: string; limit?: number };
 export type Page<T> = { data: T[]; next_cursor?: string | null };
 export type Market = { id: string; symbol: string; underlying: string; quote_unit: string; settlement_asset: string; price: string; created_at_ms: number; updated_at_ms: number };
-export type MarketTicker = { market_id: string; symbol: string; mark_price: string; index_price: string; open_interest?: string | null; open_interest_value?: string | null; volume_24h: string; turnover_24h: string; perp_next_funding_rate?: string | null; perp_next_funding_time_ms?: number | null; updated_at_ms: number };
+export type MarketTicker = { market_id: string; symbol: string; mark_price: string; index_price: string; open_interest?: string | null; open_interest_value?: string | null; volume_24h: string; turnover_24h: string; perp_next_funding_rate?: string | null; perp_next_funding_time_ms?: number | null; updated_at_ms: number;
+  /** Price of the most recent fill. */
+  last_traded_price?: string | null;
+  /** Last traded price 24h ago. */
+  prev_price_24h?: string | null;
+  /** Fractional 24h change: last_traded_price ÷ prev_price_24h − 1 ("-0.05" = −5%). */
+  price_change_24h?: string | null;
+  high_price_24h?: string | null;
+  low_price_24h?: string | null;
+  /** Fractional change of 24h volume versus the previous 24h ("0.25" = +25%). */
+  volume_change_24h?: string | null;
+};
 export type PriceLevel = { price_level: string; volume: string };
 export type MarketDepth = { market_id: string; buys: PriceLevel[]; sells: PriceLevel[]; updated_at_ms: number };
 export type Trade = { id: string; market_id: string; side: string; buyer_account_id: string; seller_account_id: string; price: string; volume: string; buyer_fee_paid: string; seller_fee_paid: string; created_at_ms: number };
